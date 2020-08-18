@@ -1,0 +1,16 @@
+// Commands needed to deploy heroku
+
+// Adding code to git
+1. Need to install git on local machine
+2. git --version // display git version
+3. git init // initialise empty repository
+4. 
+
+1. heroku login
+2. heroku create
+3. git remote -v // Displays the repositories
+
+heroku  https://git.heroku.com/fast-badlands-10296.git (fetch)
+heroku  https://git.heroku.com/fast-badlands-10296.git (push)
+
+4. git push heroku master
