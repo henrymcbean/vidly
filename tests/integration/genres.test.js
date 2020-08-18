@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const request = require('supertest');
 const {Genre} = require('../../models/genre');
 const {User} = require('../../models/user');
@@ -9,7 +10,7 @@ describe('/api/genres', () => {
   beforeEach(() => { server = require('../../index'); })
   afterEach(async () => { 
     await server.close(); 
-    await Genre.remove({});
+    await Genre.deleteMany();
   });
 
   describe('GET /', () => {

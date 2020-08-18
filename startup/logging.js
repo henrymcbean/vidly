@@ -1,5 +1,5 @@
 const winston = require('winston');
-// require('winston-mongodb');  // Prevented the running of intergration test
+require('winston-mongodb');  // Prevented the running of intergration test
 require('express-async-errors');// terminal window freezes
 
 module.exports = function() {

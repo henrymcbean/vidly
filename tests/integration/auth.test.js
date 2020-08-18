@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const {User} = require('../../models/user');
 const {Genre} = require('../../models/genre');
 const request = require('supertest');
@@ -5,7 +6,7 @@ const request = require('supertest');
 describe('auth middleware', () => {
   beforeEach(() => { server = require('../../index'); })
   afterEach(async () => { 
-    await Genre.remove({});
+    await Genre.deleteOne();
     await server.close(); 
   });
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const moment = require('moment');
 const request = require('supertest');
 const {Rental} = require('../../models/rental');
@@ -53,8 +54,8 @@ describe('/api/returns', () => {
 
   afterEach(async () => { 
     await server.close(); 
-    await Rental.remove({});
-    await Movie.remove({});
+    await Rental.deleteOne();
+    await Movie.deleteOne();
   });  
 
   it('should return 401 if client is not logged in', async () => {
@@ -82,7 +83,7 @@ describe('/api/returns', () => {
   });
 
   it('should return 404 if no rental found for the customer/movie', async () => {
-    await Rental.remove({});
+    await Rental.deleteOne();
 
     const res = await exec();
 
