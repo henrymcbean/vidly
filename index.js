@@ -1,5 +1,6 @@
 const winston = require('winston');
 const express = require('express');
+var process = require('process');
 const app = express();
 
 require('./startup/logging')();

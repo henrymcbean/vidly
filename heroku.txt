@@ -4,7 +4,8 @@
 1. Need to install git on local machine
 2. git --version // display git version
 3. git init // initialise empty repository
-4. 
+4. git add . // stage files to sent to repository
+5. git commit -m "First commit."
 
 1. heroku login
 2. heroku create
@@ -14,3 +15,28 @@ heroku  https://git.heroku.com/fast-badlands-10296.git (fetch)
 heroku  https://git.heroku.com/fast-badlands-10296.git (push)
 
 4. git push heroku master
+
+https://fast-badlands-10296.herokuapp.com/ // deployed url
+
+Got an error when trying to access endpoint
+503 service unavilable
+
+// View hheroku logd
+5. Two ways to access them.
+  a). heroku logs 
+  b). log int heroku console -> more -> View logs // Did not contain the error that was displayed in a).
+      USED HEROKU CONSOLE INSTAD
+      log int heroku console -> more -> run console
+      ls // displayed uncaughtExceptions.log
+      cat uncaughtExceptions.log  // I was able to see the error
+      'Error: FATAL ERROR: jwtPrivateKey is not defined
+6. heroku config:set vidly_jwtPrivate=1234 // Set environment
+7. heroku config:set NODE_ENV=production
+8. heroku config // View environment variables
+
+Servers are dynos and they share the environment variables.
+By default you one server (dyno) if you want to scale application
+you add more dynos. Thes dyno have a temporary file system every
+time they are restarted the file system is wiped out. If you want
+to use storage you need to add various addons.
+We also need to set the connection string in default.json.
